@@ -1,0 +1,87 @@
+/* Basic Reset & Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Default styles for #navbar (e.g., for smaller screens) */
+/* On smaller screens, the navbar might be a simple top bar or hidden */
+#navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    /* For smaller screens, it could be a block element at the top */
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+#navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Makes list items inline */
+    justify-content: center; /* Center items on small screens */
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+#navbar li {
+    margin: 0 15px;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+}
+
+#navbar a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+#main-doc {
+    margin-left: 15vw;
+}
+
+/* Media Query for Regular Sized Devices */
+@media screen and (min-width: 768px) { /* Adjust breakpoint as needed (e.g., 992px for laptops) */
+    #navbar {
+        position: fixed; /* Fixes the navbar to the viewport */
+        left: 0;          /* Aligns to the left edge */
+        top: 0;           /* Aligns to the top edge */
+        width: 200px;     /* Set a fixed width for the sidebar */
+        height: 100%;     /* Make it span the full height of the viewport */
+        background-color: #2c3e50; /* Darker background for distinction */
+        padding-top: 20px;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        z-index: 1000;    /* Ensure it's above other content */
+        text-align: left; /* Align text within the fixed nav */
+    }
+
+    #navbar ul {
+        flex-direction: column; /* Stack list items vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    #navbar li {
+        margin: 10px 0;
+        width: 100%; /* Make list items take full width */
+    }
+
+    #navbar a {
+        padding: 10px 20px; /* More padding for larger buttons */
+        width: calc(100% - 40px); /* Adjust width for padding */
+    }
+
+    /* Adjust main content to prevent overlap */
+    #main-content {
+        margin-left: 200px; /* Must match the width of the navbar */
+        padding: 20px 40px; /* Add more horizontal padding for content */
+    }
+}
+
